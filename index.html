@@ -2,17 +2,14 @@
 <!--
 Dan:
 Flexbox image & text arrangement
-Text styles up to date
-Text box & button styles
-Intro "take a dive" footer - center align, add chevron, scroll function
+button styles
 fix media query thing
 
 Jay:
-compress all images (video already compressed)
+fix the copy url button (function Nana used has deprecated)
 
 Up for grabs:
 Call-to-action section (based on Figma frame iPhone 11 Pro / X - 207)
-fix the copy url button (function Nana used has deprecated)
 
 Try:
 Text animations (animate.css)
@@ -84,7 +81,9 @@ Water Rise GHG consequences animation
     >
       <p>This site is best viewed on a mobile device.</p>
       <p class="marginClear">Scan this code to view the site on mobile!</p>
-      <img id="qr-code" src="images/qr-code.svg" alt="QR Code" />
+      <figure>
+        <img id="qr-code" src="images/qr-code.svg" alt="QR Code" />
+      </figure>
     </div>
 
     <div class="wrapper">
@@ -306,12 +305,26 @@ Water Rise GHG consequences animation
               are at fault. Learn more about how emissions affect our planet.
             </p>
             <footer>
-              <h4>Take a Dive</h4>
+              <h5>DIVE IN</h5>
+              <figure style="max-width: 2.5rem; margin: 0.5rem auto 0px auto;">
+                <img
+                  src="images/chevron.svg"
+                  alt="Arrow pointing downwards to begin the journey"
+                  style="width: 100%;"
+                />
+              </figure>
             </footer>
+            <script>
+              document.querySelector("footer").onclick = (e) => {
+                document
+                  .getElementById("diveIn")
+                  .scrollIntoView({ behavior: "smooth" });
+              };
+            </script>
           </section>
         </div>
 
-        <div class="scroll-center txtDark">
+        <div class="scroll-center txtDark" id="diveIn">
           <section class="content parallax__group">
             <h2>WHAT ARE GHGs?</h2>
             <p>
@@ -342,8 +355,16 @@ Water Rise GHG consequences animation
                   alt="temperature thermometer"
                 />
               </figure>
+              <figure>
+                <img
+                  src="images/increase_g.svg"
+                  alt="Upward arrow showing increase"
+                />
+              </figure>
               <span class="highlight">50%</span>
-              <p class="bodyBold">INCREASE DUE TO CORPORATIONS</p>
+              <p class="bodyBold" style="color: #758079;">
+                INCREASE DUE TO CORPORATIONS
+              </p>
             </section>
           </section>
         </div>
@@ -360,10 +381,17 @@ Water Rise GHG consequences animation
                 attributed to
                 <b>large corporations.</b>
               </p>
+            </div>
+            <div class="box2">
+              <figure>
+                <img
+                  src="images/increase_w.svg"
+                  alt="Upward arrow showing increase"
+                />
+              </figure>
               <span class="highlight">35%</span>
               <p class="bodyBold">OF CHANGE DUE TO CORPORATIONS</p>
             </div>
-            <div class="box2"></div>
           </section>
         </div>
 
@@ -382,9 +410,11 @@ Water Rise GHG consequences animation
               </p>
             </div>
             <span class="highlight">8.1</span>
-            <p class="bodyBold">METRIC TONS PER PERSON</p>
+            <p class="bodyBold" style="color: #758079;">
+              METRIC TONS PER PERSON
+            </p>
             <span class="highlight">41,193</span>
-            <p class="bodyBold">
+            <p class="bodyBold" style="color: #758079;">
               PEOPLE EQUAL 1 CORPORATION'S ANNUAL EMISSIONS
             </p>
           </section>
@@ -766,7 +796,9 @@ Water Rise GHG consequences animation
               >
                 Share
               </a>
-              <button id="copy">copy url</button>
+              <button id="copy" value="https://projectnocap.github.io/">
+                copy url
+              </button>
               <script>
                 let nextButton = document.querySelector("#nxtBut");
                 let nextStep = document.querySelector("#nxtStep");

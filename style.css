@@ -93,7 +93,7 @@ header > * {
 .bar3 {
   width: 2rem;
   height: 5px;
-  background-color: #38453d;
+  background-color: #0d413e;
   margin: 5px 0;
   padding-right: 1em;
   transition: 0.7s;
@@ -123,6 +123,12 @@ img {
   font: 400 1.125rem "Oswald", sans-serif;
   text-align: center;
   margin-bottom: 3rem;
+}
+
+h5 {
+  font: 700 1.125rem "Ubuntu", sans-serif;
+  color: #66071b;
+  text-align: center;
 }
 
 #linkCont {
@@ -184,7 +190,7 @@ h3 {
 }
 
 .boldAnc {
-  color: #ffffff;
+  color: #f2f2f2;
 }
 
 .scroll-container {
@@ -253,7 +259,7 @@ h3 {
 }
 
 .txtDark {
-  color: #38453d;
+  color: #0d413e;
 }
 
 .txtLight {
@@ -289,6 +295,7 @@ p {
 footer {
   position: absolute;
   bottom: 4rem;
+  align-self: center;
 }
 
 .boxLight {
@@ -351,16 +358,32 @@ footer {
   margin: 0px;
 }
 
-.bracket:before {
-  width: 1rem;
-}
-
 .bracket {
   position: absolute;
-  bottom: 2rem;
-  left: 0.75rem;
-  height: calc(68% - 3.25rem);
+  bottom: 1rem;
+  left: 1rem;
+  height: calc(68% - 2rem);
   width: 2px;
+  background-color: #f2f2f2;
+}
+
+.bracket::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 1rem;
+  background-color: #f2f2f2;
+}
+
+.bracket::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 1rem;
   background-color: #f2f2f2;
 }
 
@@ -379,12 +402,14 @@ footer {
       #86afbd 10px,
       #86afbd 20px
     );
+  border-top: solid #f2f2f2;
+  border-top-width: 2px;
 }
 
 .waterRise h2,
 .box1 > *,
 .box2 > * {
-  margin-left: 2rem;
+  margin-left: 3rem;
   margin-right: 2rem;
 }
 
@@ -446,6 +471,7 @@ button {
   html {
     font-size: 18px;
   }
+
   #menu .logo {
     margin: 2rem 40% 1rem 40%;
   }
@@ -454,32 +480,8 @@ button {
     margin: 0 6rem;
   }
 
-  .bg-vid {
-    margin: 0 -6rem;
-  }
-
-  .waterRise {
-    margin: 0px;
-  }
-
-  .waterRise h2,
-  .box1 > *,
-  .box2 > * {
-    margin-left: 6rem;
-    margin-right: 6rem;
-  }
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 18px;
-  }
-  #menu .logo {
-    margin: 2rem 40% 1rem 40%;
-  }
-
-  .content {
-    margin: 0 6rem;
+  footer figure {
+    max-width: 3rem;
   }
 
   .bg-vid {
