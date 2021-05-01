@@ -7,7 +7,8 @@
 html {
   height: 100%;
   background-color: #000;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 20px;
   font-family: "Ubuntu", sans-serif;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
@@ -298,8 +299,7 @@ p {
 }
 
 footer {
-  position: absolute;
-  bottom: 4rem;
+  margin-top: 1rem;
   align-self: center;
 }
 
@@ -307,6 +307,7 @@ footer {
   padding: 0.5rem;
   margin: 0px -0.5rem 1rem -0.5rem;
   background: #eee2c9;
+  /* box-shadow: -7px -7px 17px #fff6e3, 7px 7px 17px rgba(51, 51, 51, 0.5); */
   border-radius: 10px;
 }
 
@@ -314,7 +315,7 @@ footer {
   padding: 0.5rem;
   margin: 0px -0.5rem 1rem -0.5rem;
   background: #546e5a;
-  box-shadow: -13px -13px 36px #8fae9b, 13px 13px 36px #38453d;
+  /* box-shadow: -7px -7px 17px #8fae9b, 7px 7px 17px #38453d; */
   border-radius: 10px;
 }
 
@@ -322,7 +323,7 @@ footer {
   padding: 0.5rem;
   margin: 0px -0.5rem 1rem -0.5rem;
   background: #4e222b;
-  box-shadow: -7px -7px 17px #72353a, 7px 7px 14px rgba(14, 7, 7, 0.65);
+  /* box-shadow: -7px -7px 17px #72353a, 7px 7px 17px rgba(14, 7, 7, 0.65); */
   border-radius: 10px;
 }
 
@@ -335,13 +336,36 @@ footer {
   margin: 1rem 0;
 }
 
-.flex-img {
-  max-width: 20%;
-  margin: 2rem 0px;
+.flex-sec {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.img-cont {
-  margin: 2rem 25%;
+.flex-img {
+  flex-shrink: 0;
+}
+
+.arrow {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.arrow ~ div {
+  padding-bottom: 4px;
+}
+
+.content > .img-cont {
+  margin: 0px 15%;
+}
+
+#bottle {
+  margin: 0px 25%;
+}
+
+#oil {
+  margin: 0px 22.5%;
 }
 
 .bodyBold {
@@ -410,9 +434,29 @@ footer {
   border-top-width: 2px;
 }
 
+.box2 flex-sec {
+  margin-left: 3rem;
+}
+
+.box2 .flex-sec .arrow {
+  max-height: 100px;
+}
+
+.box2 .flex-sec .arrow img {
+  max-height: 100px;
+}
+
+.box2 .flex-sec div {
+  max-width: 50%;
+}
+
+.box2 .flex-sec div .bodyBold {
+  padding: 0px;
+  margin: 0px;
+}
+
 .waterRise h2,
-.box1 > *,
-.box2 > * {
+.box1 > * {
   margin-left: 3rem;
   margin-right: 2rem;
 }
@@ -424,17 +468,38 @@ footer {
 
 #dataVis {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#dataLabel {
+  margin-bottom: 0.5rem;
 }
 
 #nxtStep {
   display: none;
 }
 
+.graphTxt {
+  font-size: 0.875rem;
+}
+
+.flex-sec .img-cont {
+  max-width: 45%;
+}
+
 .statePopups,
 .lobbyPopups {
   text-decoration: underline;
   font-weight: bold;
+}
+
+#irreInfoExp .flex-sec div {
+  margin-left: 1rem;
+  max-width: 10rem;
+}
+
+#lobbyInfoExp figure {
+  margin: 0px 15%;
 }
 
 .backbuild {
@@ -466,14 +531,13 @@ footer {
   object-fit: cover;
 }
 
-#socials button {
+button {
   display: block;
   width: 100%;
-  height: 4.5rem;
-  background: #00acee;
-  border: 1px solid #ffffff;
+  padding: 1rem;
   border-radius: 52px;
-  margin: 1rem 0px;
+  font-family: "Ubuntu", sans-serif;
+  /* border: none; */
 }
 
 @media (min-width: 768px) {
@@ -530,7 +594,7 @@ footer {
   }
 
   .wrapper {
-    outline: solid red;
+    outline: .5rem solid #546e5a;
     flex-shrink: 0;
   }
 
@@ -574,4 +638,63 @@ footer {
   .bg-vid video {
     min-width: 100%;
   }
+}
+
+.twt,
+.fb,
+#copy {
+  color: white;
+  background-color: #00acee;
+  padding: 0.2rem;
+  text-align: center;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.twt img,
+.fb img {
+  width: 40px;
+  padding-left: 0.8rem;
+}
+
+.twt p,
+.fb p,
+#copy p {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+
+.twt:hover {
+  background-color: #006891;
+}
+
+.twt,
+.fb {
+  margin-bottom: 1rem;
+}
+
+.fb {
+  background-color: #3b5998;
+}
+
+.fb:hover {
+  background-color: rgb(24, 48, 102);
+}
+
+#copy {
+  background-color: white;
+  color: black;
+  justify-content: center;
+  padding-left: 0;
+}
+
+#copy p {
+  padding-left: 0;
+}
+
+#copy:hover {
+  background-color: lightgray;
 }
