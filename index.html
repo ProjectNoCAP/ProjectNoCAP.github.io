@@ -12,6 +12,7 @@ Buttons
 Intro "take a dive" footer - add chevron, click function that scrolls to first section
 
 Necessary - do last:
+alt text
 Update all text/image content
 Compress images
 
@@ -705,60 +706,41 @@ Water Rise GHG consequences animation
             <h2>Next Steps</h2>
             <div id="socials">
               <a
-                href="https://projectnocap.github.io/"
-                class="twitter-share-button"
-                data-show-count="false"
-                >Tweet</a
+                class="twt"
+                href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Let%27s%20hold%20corporations%20accountable%20in%20the%20climate%20crisis.&tw_p=tweetbutton&url=https://projectnocap.github.io/"
               >
+                Tweet
+              </a>
+              <a
+                class="fb"
+                href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fprojectnocap.github.io%2F&display=popup&ref=plugin&src=share_button"
+              >
+                Share
+              </a>
+              <button id="copy">copy url</button>
+              <script>
+                let nextButton = document.querySelector("#nxtBut");
+                let nextStep = document.querySelector("#nxtStep");
+                let copy = document.querySelector("#copy");
+                let vid = document.querySelector("#vid");
+                nextButton.addEventListener("click", function () {
+                  nextStep.style.display = "block";
+                  vid.play();
+                  document
+                    .getElementById("5")
+                    .scrollIntoView({ behavior: "smooth" });
+                });
 
-              <div
-                class="fb-share-button"
-                data-href="https://projectnocap.github.io/"
-                data-layout="button"
-                data-size="small"
-              >
-                <a
-                  target="_blank"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-                  class="fb-xfbml-parse-ignore"
-                  >Share</a
-                >
-              </div>
+                copy.addEventListener("click", function () {
+                  copy.select();
+                  copy.setSelectionRange(0, 99999);
+                  document.execCommand(
+                    "copy",
+                    "https://projectnocap.github.io/"
+                  );
+                });
+              </script>
             </div>
-
-            <a
-              class="twt"
-              href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Let%27s%20hold%20corporations%20accountable%20in%20the%20climate%20crisis.&tw_p=tweetbutton&url=https://nocapteam.github.io/&original_referer=https://nocapteam.github.io/"
-            >
-              Tweet
-            </a>
-            <a
-              class="fb"
-              href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fnocapteam.github.io%2F&display=popup&ref=plugin&src=share_button"
-            >
-              Share
-            </a>
-            <button id="copy">copy url</button>
-
-            <script>
-              let nextButton = document.querySelector("#nxtBut");
-              let nextStep = document.querySelector("#nxtStep");
-              let copy = document.querySelector("#copy");
-              let vid = document.querySelector("#vid");
-              nextButton.addEventListener("click", function () {
-                nextStep.style.display = "block";
-                vid.play();
-                document
-                  .getElementById("5")
-                  .scrollIntoView({ behavior: "smooth" });
-              });
-
-              copy.addEventListener("click", function () {
-                copy.select();
-                copy.setSelectionRange(0, 99999);
-                document.execCommand("copy", "https://nocapteam.github.io/");
-              });
-            </script>
           </section>
         </div>
       </main>
