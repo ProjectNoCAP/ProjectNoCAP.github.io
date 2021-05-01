@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <!--
-Necessary:
+Dan:
 Flexbox image & text arrangement
-Call-to-action section
-
-Necessary & quick:
-QR code
 Text styles up to date
 Text box & button styles
-Buttons
-Intro "take a dive" footer - add chevron, click function that scrolls to first section
+Intro "take a dive" footer - center align, add chevron, scroll function
+fix media query thing
 
-Necessary - do last:
-alt text
-Update all text/image content
-Compress images
+Jay:
+compress all images (video already compressed)
+
+Up for grabs:
+Call-to-action section (based on Figma frame iPhone 11 Pro / X - 207)
+fix the copy url button (function Nana used has deprecated)
 
 Try:
 Text animations (animate.css)
@@ -81,11 +79,12 @@ Water Rise GHG consequences animation
 
   <body>
     <div
-      class="disclaimer txtLight boxLight"
+      class="disclaimer txtLight boxMid"
       style="padding: 1rem; margin: auto;"
     >
       <p>This site is best viewed on a mobile device.</p>
       <p class="marginClear">Scan this code to view the site on mobile!</p>
+      <img id="qr-code" src="images/qr-code.svg" alt="QR Code" />
     </div>
 
     <div class="wrapper">
@@ -105,7 +104,7 @@ Water Rise GHG consequences animation
           />
         </audio>
         <figure>
-          <img id="volume" src="images/volume.png" />
+          <img id="volume" src="images/volume.png" alt="speaker" />
         </figure>
 
         <p id="mobAudio">Tap Here for Audio</p>
@@ -144,7 +143,9 @@ Water Rise GHG consequences animation
       </header>
 
       <nav id="menu" hidden="true">
-        <figure class="logo"><img src="images/logo_pink.png" /></figure>
+        <figure class="logo">
+          <img src="images/logo_pink.png" alt="text saying no cap" />
+        </figure>
         <ul id="linkCont">
           <li>
             <a id="intro">
@@ -294,7 +295,9 @@ Water Rise GHG consequences animation
       <main class="scroll-container parallax">
         <div class="scroll-center txtDark" id="1">
           <section class="content parallax__group">
-            <figure class="logo"><img src="images/logo_grad.png" /></figure>
+            <figure class="logo">
+              <img src="images/logo_grad.png" alt="text saying no cap" />
+            </figure>
             <h4>
               No Corporate Action Present
             </h4>
@@ -334,7 +337,10 @@ Water Rise GHG consequences animation
             </p>
             <section>
               <figure class="flex-img">
-                <img src="images/thermometer.png" />
+                <img
+                  src="images/thermometer.png"
+                  alt="temperature thermometer"
+                />
               </figure>
               <span class="highlight">50%</span>
               <p class="bodyBold">INCREASE DUE TO CORPORATIONS</p>
@@ -344,6 +350,7 @@ Water Rise GHG consequences animation
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group waterRise">
+            <div class="bracket"></div>
             <h2 class="txtDark">GHG CONSEQUENCES</h2>
             <div class="box1">
               <p class="bodyBold">7 in. sea level increase</p>
@@ -445,7 +452,9 @@ Water Rise GHG consequences animation
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/lightbulb.png" /></figure>
+            <figure class="img-cont">
+              <img src="images/lightbulb.png" alt="shattered lightbulb" />
+            </figure>
             <h2>POWER PLANTS</h2>
             <p class="boxMid">
               Electricity comes from power plants, the
@@ -457,14 +466,19 @@ Water Rise GHG consequences animation
               Power plants are responsible for 58% of sector emissions.
             </p>
             <figure class="img-cont">
-              <img src="images/pp_graph.png" />
+              <img
+                src="images/pp_graph.png"
+                alt="pie chart highlighting 58 percent"
+              />
             </figure>
           </section>
         </div>
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/helmet.png" /></figure>
+            <figure class="img-cont">
+              <img src="images/helmet.png" alt="broken mining helmet" />
+            </figure>
             <h2>PETROLEUM AND NATURAL GAS</h2>
             <p class="boxMid">
               Oil and gas giants like <b>BP</b> and <b>ExxonMobil</b> are part
@@ -477,14 +491,19 @@ Water Rise GHG consequences animation
               emissions.
             </p>
             <figure class="img-cont">
-              <img src="images/png_graph.png" />
+              <img
+                src="images/png_graph.png"
+                alt="pie chart highlighting 12 percent"
+              />
             </figure>
           </section>
         </div>
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/bottle.png" /></figure>
+            <figure class="img-cont">
+              <img src="images/bottle.png" alt="crumpled up plastic bottle" />
+            </figure>
             <h2>CHEMICALS</h2>
             <p class="boxMid">
               Plastics, pharmaceuticals, and clothing all come from the chemical
@@ -496,14 +515,19 @@ Water Rise GHG consequences animation
               Chemical production is responsible for 6.5% of sector emissions.
             </p>
             <figure class="img-cont">
-              <img src="images/chem_graph.png" />
+              <img
+                src="images/chem_graph.png"
+                alt="pie chart highlighting 6.5 percent"
+              />
             </figure>
           </section>
         </div>
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/oil.png" /></figure>
+            <figure class="img-cont">
+              <img src="images/oil.png" alt="damaged oil barrel" />
+            </figure>
             <h2>REFINERIES</h2>
             <p class="boxMid">
               Refineries are facilities that turn raw materials, such as crude
@@ -515,7 +539,10 @@ Water Rise GHG consequences animation
               Refineries are responsible for 6.2% of sector emissions.
             </p>
             <figure class="img-cont">
-              <img src="images/ref_graph.png" />
+              <img
+                src="images/ref_graph.png"
+                alt="pie chart highlighting 6.2 percent"
+              />
             </figure>
           </section>
         </div>
@@ -535,8 +562,9 @@ Water Rise GHG consequences animation
               then, <a class="statePopups">only 12 states</a> have made policies
               with <a class="statePopups">varying success</a>.
             </p>
-            <h3 id="irrHead"></h3>
-            <div id="irresponse" class="boxDark"></div>
+            <h3 id="irreHead"></h3>
+            <div id="irresponse"></div>
+            <div id="irreInfoExp"></div>
           </section>
         </div>
 
@@ -552,39 +580,49 @@ Water Rise GHG consequences animation
               <a class="lobbyPopups">commitments to action</a>.
             </p>
             <h3 id="lobbyHead"></h3>
-            <div id="lobby" class="boxDark"></div>
+            <div id="lobby"></div>
+            <div id="lobbyInfoExp"></div>
           </section>
         </div>
 
         <script>
           let statePopups = document.querySelectorAll(".statePopups");
+          let irre = document.querySelector("#irresponse");
+          let irreHead = document.querySelector("#irreHead");
+          let irreInfoExp = document.querySelector("#irreInfoExp");
           let lobbyPopups = document.querySelectorAll(".lobbyPopups");
           let lobby = document.querySelector("#lobby");
           let lobbyHead = document.querySelector("#lobbyHead");
-          let irre = document.querySelector("#irresponse");
-          let irrHead = document.querySelector("#irrHead");
+          let lobbyInfoExp = document.querySelector("#lobbyInfoExp");
           for (let i = 0; i < statePopups.length; i++) {
             statePopups[i].addEventListener("click", function () {
               if (irre.style.display == "" || irre.style.display == "none") {
                 irre.style.display = "block";
+                irre.classList.add("boxDark");
               }
               switch (i) {
                 case 0:
-                  irrHead.innerHTML = "Comprehensive Policy";
+                  irreHead.innerHTML = "Comprehensive Policy";
                   irre.innerHTML =
                     "A comprehensive policy would place market-based limits and <b>incentives to reduce GHG emissions.</b> Programs include the Regional Greenhouse Gas Initiative in the northeast and cap policies on the west coast.";
+                  irreInfoExp.innerHTML =
+                    "<figure class='img-cont'><img src='images/usa.png' alt='the united states of america' /></figure>";
 
                   break;
                 case 1:
-                  irrHead.innerHTML = "Only 12 States";
+                  irreHead.innerHTML = "Only 12 States";
                   irre.innerHTML =
                     "One key state lacking regulations is <b>Texas.</b> This state emits more GHGs than the entire petroleum and natural gas sector!";
+                  irreInfoExp.innerHTML =
+                    "<figure class='img-cont'><img src='images/tx_graph.png' alt='graph highlighting 13 percent'/></figure><h3>Texas</h3><p>is responsible for 13% of U.S. sector emissions.</p>";
 
                   break;
                 case 2:
-                  irrHead.innerHTML = "Varying Success";
+                  irreHead.innerHTML = "Varying Success";
                   irre.innerHTML =
                     "Even California, which is hailed as an example of a good cap-and-trade program, has <b>fallen victim to corporate lobbying.</b> This has resulted in inefficient policy.";
+                  irreInfoExp.innerHTML =
+                    "<figure class='img-cont'><img src='images/california.png' alt='California state' /></figure>";
 
                   break;
               }
@@ -595,24 +633,30 @@ Water Rise GHG consequences animation
             lobbyPopups[i].addEventListener("click", function () {
               if (lobby.style.display == "" || lobby.style.display == "none") {
                 lobby.style.display = "block";
+                lobby.classList.add("boxDark");
               }
               switch (i) {
                 case 0:
                   lobbyHead.innerHTML = "What is Lobbying?";
                   lobby.innerHTML =
                     "To lobby is to promote or secure the passage of legislation by influencing public officials.";
+                  lobbyInfoExp.innerHTML = "";
 
                   break;
                 case 1:
                   lobbyHead.innerHTML = "Spending on Lobbying";
                   lobby.innerHTML =
                     "The 5 largest public oil and gas companies spend <b>$200 million</b> annually on lobbying.";
+                  lobbyInfoExp.innerHTML =
+                    "<figure class='img-cont'><img src='images/lobby_graph.png' alt='Graph showing top corporations' lobbying spending: BP 53 million, shell 49 million, exxonmobile 41 million, chevron 29 million, total 29 million'/></figure>";
 
                   break;
                 case 2:
                   lobbyHead.innerHTML = "ExxonMobil";
                   lobby.innerHTML =
                     "<b>ExxonMobil spent $30 million</b> on anti-climate change thinktanks and research.";
+                  lobbyInfoExp.innerHTML =
+                    "<span class='highlight'>50%</span><span>MILLION</span><p class='bodyBold'>COULD HAVE ESTABLISHED A 30 MEGAWATT SOLAR FARM</p>";
 
                   break;
               }
@@ -630,20 +674,23 @@ Water Rise GHG consequences animation
               class="backbuild"
               src="images/full_background.png"
               style="margin-left: 100px;"
+              alt="view under water with sun and mountains in the background"
             />
           </figure>
           <figure class="bg-img parallax__layer parallax__layer--far">
             <img
               class="backbuild"
               src="images/back_buildings.png"
-              style="margin-left: 200px;"
+              style="margin-left: 125px;"
+              alt="2 further destroyed skyscrapers"
             />
           </figure>
           <figure class="bg-img parallax__layer parallax__layer--back">
             <img
               class="backbuild"
               src="images/front_building.png"
-              style="margin-right: 50px; margin-bottom: -50px;"
+              style="margin-right: 125px;"
+              alt="closer destroyed skyscraped"
             />
           </figure>
           <script>
@@ -706,12 +753,14 @@ Water Rise GHG consequences animation
             <h2>Next Steps</h2>
             <div id="socials">
               <a
+                target="_blank"
                 class="twt"
                 href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Let%27s%20hold%20corporations%20accountable%20in%20the%20climate%20crisis.&tw_p=tweetbutton&url=https://projectnocap.github.io/"
               >
                 Tweet
               </a>
               <a
+                target="_blank"
                 class="fb"
                 href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fprojectnocap.github.io%2F&display=popup&ref=plugin&src=share_button"
               >

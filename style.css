@@ -294,28 +294,24 @@ footer {
 .boxLight {
   padding: 0.5rem;
   margin: 0px -0.5rem 1rem -0.5rem;
-  background: rgba(243, 216, 199, 0.44);
-  backdrop-filter: blur(20px);
+  background: #eee2c9;
+  box-shadow: -13px -13px 36px #fff6e3, 13px 13px 36px rgba(51, 51, 51, 0.5);
   border-radius: 10px;
 }
 
 .boxMid {
   padding: 0.5rem;
   margin: 0px -0.5rem 1rem -0.5rem;
-  background: rgba(136, 168, 143, 0.44);
-  /* box-shadow: -13px -13px 36px #8fae9b, 13px 13px 36px #38453d; */
-  box-shadow: -13px -13px 36px rgba(143, 174, 155, 0.5),
-    13px 13px 36px rgba(56, 69, 61, 0.5);
-  backdrop-filter: blur(20px);
+  background: #546e5a;
+  box-shadow: -13px -13px 36px #8fae9b, 13px 13px 36px #38453d;
   border-radius: 10px;
 }
 
 .boxDark {
   padding: 0.5rem;
   margin: 0px -0.5rem 1rem -0.5rem;
-  background: rgba(78, 34, 43, 0.8);
-  box-shadow: -13px -13px 36px #411b1e, 13px 13px 36px #1f0e11;
-  backdrop-filter: blur(20px);
+  background: #4e222b;
+  box-shadow: -7px -7px 17px #72353a, 7px 7px 14px rgba(14, 7, 7, 0.65);
   border-radius: 10px;
 }
 
@@ -355,12 +351,22 @@ footer {
   margin: 0px;
 }
 
+.bracket:before {
+  width: 1rem;
+}
+
+.bracket {
+  position: absolute;
+  bottom: 2rem;
+  left: 0.75rem;
+  height: calc(68% - 3.25rem);
+  width: 2px;
+  background-color: #f2f2f2;
+}
+
 .box1 {
   height: 46%;
-  /* background: rgba(0, 0, 0, 0.5); */
-  /* background: rgba(9, 30, 82, 0.5); */
   background: rgba(11, 51, 71, 0.5);
-  /* background: rgba(13, 65, 62, 0.5); */
 }
 
 .box2 {
