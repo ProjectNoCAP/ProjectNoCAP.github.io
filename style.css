@@ -449,7 +449,7 @@ footer {
 }
 
 .box2 .flex-sec div {
-  max-width: 50%;
+  max-width: 37%;
 }
 
 .box2 .flex-sec div .bodyBold {
@@ -699,4 +699,8 @@ button {
 
 #copy:hover {
   background-color: lightgray;
+}
+
+#nxtBut {
+  background-color: #f2f2f2;
 }
