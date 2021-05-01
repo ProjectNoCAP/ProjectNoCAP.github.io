@@ -573,6 +573,11 @@ button {
     margin-left: 6rem;
     margin-right: 6rem;
   }
+  
+  .bracket {
+    bottom: 3rem;
+    left: 3rem;
+  }
 }
 
 @media (width: 768px) and (height: 1024px) {
@@ -629,9 +634,13 @@ button {
   }
 
   .waterRise h2,
-  .box1 > *,
   .box2 > * {
     margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .box1 > * {
+    margin-left: 3rem;
     margin-right: 2rem;
   }
 }
