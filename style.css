@@ -31,6 +31,11 @@ body {
   margin-bottom: 0.25rem;
 }
 
+#qr-code {
+  margin-top: 0.5rem;
+  max-width: 310px;
+}
+
 .wrapper {
   align-self: center;
   margin: 0 auto;
@@ -302,7 +307,6 @@ footer {
   padding: 0.5rem;
   margin: 0px -0.5rem 1rem -0.5rem;
   background: #eee2c9;
-  box-shadow: -13px -13px 36px #fff6e3, 13px 13px 36px rgba(51, 51, 51, 0.5);
   border-radius: 10px;
 }
 
@@ -448,11 +452,6 @@ footer {
   max-width: 200%;
 }
 
-button {
-  max-width: 10rem;
-  z-index: 2;
-}
-
 .bg-vid {
   margin: 0 -2rem;
   display: flex;
@@ -465,6 +464,16 @@ button {
 .bg-vid video {
   max-height: 200%;
   object-fit: cover;
+}
+
+#socials button {
+  display: block;
+  width: 100%;
+  height: 4.5rem;
+  background: #00acee;
+  border: 1px solid #ffffff;
+  border-radius: 52px;
+  margin: 1rem 0px;
 }
 
 @media (min-width: 768px) {
