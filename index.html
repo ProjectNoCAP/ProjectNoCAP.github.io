@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<!--
+Necessary:
+Flexbox image & text arrangement
+Call-to-action section
+
+Necessary & quick:
+QR code
+Text styles up to date
+Text box & button styles
+Buttons
+Intro "take a dive" footer - add chevron, click function that scrolls to first section
+
+Necessary - do last:
+Update all text/image content
+Compress images
+
+Try:
+Text animations (animate.css)
+Fish background images
+----------
+
+Finish:
+CTA z-index fix
+Nav decoration
+
+Shazam:
+QR code in wide media queries
+Fish animation
+People walking animation
+Water Rise GHG consequences animation
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      property="og:title"
+      content="No C.A.P. - An immersive journey into the impact of corporations on climate change"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nocapteam.github.io/" />
+    <meta
+      property="og:image"
+      content="https://people.rit.edu/dph8062/nocap.png"
+    />
+    <meta
+      property="og:description"
+      content="No C.A.P. is an immersive journey through an underwater city devestated by rising sea levels, focusing on the impact of corporations on climate change. How much are they contributing to the climate crisis, and what can we do about it?"
+    />
+    <meta
+      property="og:kewywords"
+      content="climate, change, crisis, corporations, corporate, action, accountability, greenhouse gas, emissions, capstone"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="main.js"></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+
+    <title>
+      No C.A.P. - An immersive journey into the impact of corporations on
+      climate change
+    </title>
+  </head>
+
+  <body>
+    <div
+      class="disclaimer txtLight boxLight"
+      style="padding: 1rem; margin: auto;"
+    >
+      <p>This site is best viewed on a mobile device.</p>
+      <p class="marginClear">Scan this code to view the site on mobile!</p>
+    </div>
+
+    <div class="wrapper">
+      <div id="fb-root"></div>
+      <script
+        async
+        defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
+        nonce="kf1YTDf9"
+      ></script>
+      <header class="txtDark">
+        <audio id="audio" autoplay loop>
+          <source
+            src="https://docs.google.com/uc?export=download&id=1JEn71XOqrVZuDqeOgMG1ZQgdDDoJPWp5"
+            type="audio/wav"
+          />
+        </audio>
+        <figure>
+          <img id="volume" src="images/volume.png" />
+        </figure>
+
+        <p id="mobAudio">Tap Here for Audio</p>
+
+        <script>
+          let volume = document.querySelector("#volume");
+          let audio = document.querySelector("#audio");
+          let mobAudio = document.querySelector("#mobAudio");
+          volume.addEventListener("click", function () {
+            if (audio.muted == true) {
+              audio.muted = false;
+              volume.src = "images/volume.png";
+            } else {
+              audio.muted = true;
+              volume.src = "images/mute.png";
+            }
+          });
+
+          mobAudio.addEventListener("click", function () {
+            audio.play();
+            mobAudio.style.display = "none";
+          });
+
+          let vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+          window.addEventListener("resize", () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+          });
+        </script>
+        <div id="menuButton">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </header>
+
+      <nav id="menu" hidden="true">
+        <figure class="logo"><img src="images/logo_pink.png" /></figure>
+        <ul id="linkCont">
+          <li>
+            <a id="intro">
+              <div class="bullet">
+                <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false">
+                  <circle stroke="none" cx="16" cy="16" r="10"></circle>
+                </svg>
+              </div>
+              <h3>No C.A.P.</h3>
+              <p>Greenhouse Gas Overview</p>
+            </a>
+          </li>
+          <li>
+            <a id="who">
+              <div class="bullet">
+                <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false">
+                  <circle stroke="none" cx="16" cy="16" r="10"></circle>
+                </svg>
+              </div>
+              <h3>Who Is Responsible?</h3>
+              <p>Corporate Responsibility</p>
+            </a>
+          </li>
+          <li>
+            <a id="how">
+              <div class="bullet">
+                <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false">
+                  <circle stroke="none" cx="16" cy="16" r="10"></circle>
+                </svg>
+              </div>
+              <h3>How Is This Happening?</h3>
+              <p>Government Measures</p>
+            </a>
+          </li>
+          <li>
+            <a id="what">
+              <div class="bullet">
+                <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false">
+                  <circle stroke="none" cx="16" cy="16" r="10"></circle>
+                </svg>
+              </div>
+              <h3>What Can You Do?</h3>
+              <p>Spread the Word</p>
+            </a>
+          </li>
+        </ul>
+        <script>
+          function toggleMenu() {
+            if (menu.hidden == true) {
+              navBold();
+              menu.style.display = "flex";
+              menu.hidden = false;
+              menuButton.classList.toggle("change");
+              // document.querySelector("#mobAudio").style.color = "#f2f2f2";
+            } else if (menu.hidden == false) {
+              menu.style.display = "none";
+              menu.hidden = true;
+              menuButton.classList.toggle("change");
+              // document.querySelector("#mobAudio").style.color = "#38453d";
+            }
+          }
+
+          menuButton.addEventListener("click", toggleMenu);
+
+          document.querySelector("#intro").onclick = (e) => {
+            document.getElementById("1").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          };
+          document.querySelector("#who").onclick = (e) => {
+            document.getElementById("2").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          };
+          document.querySelector("#how").onclick = (e) => {
+            document.getElementById("3").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          };
+          document.querySelector("#what").onclick = (e) => {
+            document.getElementById("4").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          };
+
+          function navBold() {
+            scrollPos = document.querySelector(".scroll-container").scrollTop;
+            bullets = document.getElementsByClassName("bullet");
+            if (document.body.clientWidth <= 800) {
+              if (scrollPos < window.innerHeight * 6) {
+                clearBoldClass();
+                document.getElementById("intro").classList.add("boldAnc");
+                bullets[0].classList.add("big");
+              } else if (
+                window.innerHeight * 6 <= scrollPos &&
+                scrollPos < window.innerHeight * 11
+              ) {
+                clearBoldClass();
+                document.getElementById("who").classList.add("boldAnc");
+                bullets[1].classList.add("big");
+              } else if (
+                window.innerHeight * 11 <= scrollPos &&
+                scrollPos < window.innerHeight * 14
+              ) {
+                clearBoldClass();
+                document.getElementById("how").classList.add("boldAnc");
+                bullets[2].classList.add("big");
+              } else if (window.innerHeight * 14 <= scrollPos) {
+                clearBoldClass();
+                document.getElementById("what").classList.add("boldAnc");
+                bullets[3].classList.add("big");
+              }
+            } else if (document.body.clientWidth > 800) {
+              newWinHeight = document.querySelector(".wrapper").clientHeight;
+              if (scrollPos < newWinHeight * 6) {
+                clearBoldClass();
+                document.getElementById("intro").classList.add("boldAnc");
+                bullets[0].classList.add("big");
+              } else if (
+                newWinHeight * 6 <= scrollPos &&
+                scrollPos < newWinHeight * 11
+              ) {
+                clearBoldClass();
+                document.getElementById("who").classList.add("boldAnc");
+                bullets[1].classList.add("big");
+              } else if (
+                newWinHeight * 11 <= scrollPos &&
+                scrollPos < newWinHeight * 14
+              ) {
+                clearBoldClass();
+                document.getElementById("how").classList.add("boldAnc");
+                bullets[2].classList.add("big");
+              } else if (newWinHeight * 14 <= scrollPos) {
+                clearBoldClass();
+                document.getElementById("what").classList.add("boldAnc");
+                bullets[3].classList.add("big");
+              }
+            }
+          }
+
+          function clearBoldClass() {
+            let links = document.getElementById("linkCont").children;
+            for (let link of links) {
+              link.children[0].classList.remove("boldAnc");
+              link.children[0].children[0].classList.remove("big");
+            }
+          }
+        </script>
+      </nav>
+
+      <main class="scroll-container parallax">
+        <div class="scroll-center txtDark" id="1">
+          <section class="content parallax__group">
+            <figure class="logo"><img src="images/logo_grad.png" /></figure>
+            <h4>
+              No Corporate Action Present
+            </h4>
+            <p>
+              Greenhouse gas emissions are killing our planet and corporations
+              are at fault. Learn more about how emissions affect our planet.
+            </p>
+            <footer>
+              <h4>Take a Dive</h4>
+            </footer>
+          </section>
+        </div>
+
+        <div class="scroll-center txtDark">
+          <section class="content parallax__group">
+            <h2>WHAT ARE GHGs?</h2>
+            <p>
+              <b>Greenhouse gases (GHGs)</b> are gases that trap heat in earth's
+              atmosphere and are released primarily by burning fossil fuels.
+            </p>
+            <p>This results in:</p>
+            <ul class="GHGcons">
+              <li>Rising Sea Levels</li>
+              <li>Higher Temperatures</li>
+              <li>Extreme Weather</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="scroll-center txtDark">
+          <section class="content parallax__group">
+            <h2>GHG CONSEQUENCES</h2>
+            <p>
+              The earth's surface temperature has risen by
+              <b>1.44&#176; Fahrenheit</b>. Large corporations are at fault for
+              <b>50% of that change.</b>
+            </p>
+            <section>
+              <figure class="flex-img">
+                <img src="images/thermometer.png" />
+              </figure>
+              <span class="highlight">50%</span>
+              <p class="bodyBold">INCREASE DUE TO CORPORATIONS</p>
+            </section>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group waterRise">
+            <h2 class="txtDark">GHG CONSEQUENCES</h2>
+            <div class="box1">
+              <p class="bodyBold">7 in. sea level increase</p>
+              <p>
+                GHG emissions have caused a global sea level increase of
+                <b>7 inches</b> since 1880. <b>35%</b> of the change is
+                attributed to
+                <b>large corporations.</b>
+              </p>
+              <span class="highlight">35%</span>
+              <p class="bodyBold">OF CHANGE DUE TO CORPORATIONS</p>
+            </div>
+            <div class="box2"></div>
+          </section>
+        </div>
+
+        <div class="scroll-center txtDark">
+          <section class="content parallax__group">
+            <h2>HOW WE COMPARE</h2>
+            <div class="boxLight">
+              <p>
+                In 2019, the average U.S. citizen produced equivalent to around
+                <b>8.1 metric tons of CO2.</b>
+              </p>
+              <p class="marginClear">
+                Large corporate facilities anually emit an average amount of
+                GHGs equivalent to <b>41,193 citizens</b> - that’s
+                <b>338,273.87 metric tons</b> of CO2 each.
+              </p>
+            </div>
+            <span class="highlight">8.1</span>
+            <p class="bodyBold">METRIC TONS PER PERSON</p>
+            <span class="highlight">41,193</span>
+            <p class="bodyBold">
+              PEOPLE EQUAL 1 CORPORATION'S ANNUAL EMISSIONS
+            </p>
+          </section>
+        </div>
+
+        <div class="scroll-center txtDark">
+          <section class="content parallax__group">
+            <div id="dataVis"></div>
+            <h3 id="dataLabel"></h3>
+            <div class="boxLight">
+              <p id="dataInfo" class="marginClear">
+                Tap on the circles to find which GHGs and industries are the
+                largest polluters.
+              </p>
+            </div>
+
+            <script type="module">
+              import {
+                Runtime,
+                Inspector
+              } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+              import define from "https://api.observablehq.com/d/51d34fdd73b2a397.js?v=3";
+              new Runtime().module(define, (name) => {
+                if (name === "dataVis") {
+                  return new Inspector(document.querySelector("#dataVis"));
+                }
+                if (name === "dataInfo") {
+                  return {
+                    // pending() {
+                    //   document.querySelector("#dataInfo").innerHTML = "";
+                    // },
+                    fulfilled(value) {
+                      if (value != "value => {return value}") {
+                        //console.log(value)
+                        document.querySelector("#dataInfo").innerHTML = value;
+                      }
+                    }
+                  };
+                  //return new Inspector(document.querySelector("#dataInfo"));
+                }
+                if (name === "dataLabel") {
+                  return {
+                    pending() {
+                      document.querySelector("#dataLabel").innerHTML =
+                        "2019 Greenhouse Gas Emissions";
+                    },
+                    fulfilled(value) {
+                      if (value != "value => {return value}") {
+                        document.querySelector("#dataLabel").innerHTML = value;
+                      }
+                    }
+                  };
+                  //return new Inspector(document.querySelector("#dataLabel"));
+                }
+              });
+            </script>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group" id="2">
+            <h1>Corporate Responsibility</h1>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group">
+            <figure class="img-cont"><img src="images/lightbulb.png" /></figure>
+            <h2>POWER PLANTS</h2>
+            <p class="boxMid">
+              Electricity comes from power plants, the
+              <b>greatest polluters</b> of GHG emissions. They contribute
+              <b>over a billion</b> metric tons of CO2e annually and pollute
+              more CO2 than all other sectors combined.
+            </p>
+            <p class="graphTxt">
+              Power plants are responsible for 58% of sector emissions.
+            </p>
+            <figure class="img-cont">
+              <img src="images/pp_graph.png" />
+            </figure>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group">
+            <figure class="img-cont"><img src="images/helmet.png" /></figure>
+            <h2>PETROLEUM AND NATURAL GAS</h2>
+            <p class="boxMid">
+              Oil and gas giants like <b>BP</b> and <b>ExxonMobil</b> are part
+              of this high emitting sector. In 2019 alone, petroleum and natural
+              gas companies released over <b>341 million</b> metric tons of
+              CO2e, similar to GHGs from <b>74 million cars.</b>
+            </p>
+            <p class="graphTxt">
+              The petrolium and natural gas sector are responsible for 12% of
+              emissions.
+            </p>
+            <figure class="img-cont">
+              <img src="images/png_graph.png" />
+            </figure>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group">
+            <figure class="img-cont"><img src="images/bottle.png" /></figure>
+            <h2>CHEMICALS</h2>
+            <p class="boxMid">
+              Plastics, pharmaceuticals, and clothing all come from the chemical
+              sector. It polluted <b>186 million</b> metric tons of CO2e in
+              2019! That’s equivalent to the energy use of
+              <b>22.3 million homes</b>!
+            </p>
+            <p class="graphTxt">
+              Chemical production is responsible for 6.5% of sector emissions.
+            </p>
+            <figure class="img-cont">
+              <img src="images/chem_graph.png" />
+            </figure>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group">
+            <figure class="img-cont"><img src="images/oil.png" /></figure>
+            <h2>REFINERIES</h2>
+            <p class="boxMid">
+              Refineries are facilities that turn raw materials, such as crude
+              oil, into a desired product, like gasoline. Its 2019 CO2e is equal
+              to the CO2 emissions from
+              <b>412 million barrels of crude oil.</b>
+            </p>
+            <p class="graphTxt">
+              Refineries are responsible for 6.2% of sector emissions.
+            </p>
+            <figure class="img-cont">
+              <img src="images/ref_graph.png" />
+            </figure>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group" id="3">
+            <h1>Government Measures</h1>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group">
+            <h2>STATE IRRESPONSIBILITY</h2>
+            <p class="boxDark">
+              In 2005, the U.S. Senate determined that Congress must pass
+              <a class="statePopups">comprehensive climate policies</a>. Since
+              then, <a class="statePopups">only 12 states</a> have made policies
+              with <a class="statePopups">varying success</a>.
+            </p>
+            <h3 id="irrHead"></h3>
+            <div id="irresponse" class="boxDark"></div>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group">
+            <h2>LOBBYING</h2>
+            <p class="boxDark">
+              <a class="lobbyPopups">Lobbying</a> against climate policy is a
+              huge barrier to climate action. Corporations
+              <a class="lobbyPopups">spend millions</a> on lobbying out of fear
+              that it may hurt their business practices. Many of these companies
+              do so in spite of their stated
+              <a class="lobbyPopups">commitments to action</a>.
+            </p>
+            <h3 id="lobbyHead"></h3>
+            <div id="lobby" class="boxDark"></div>
+          </section>
+        </div>
+
+        <script>
+          let statePopups = document.querySelectorAll(".statePopups");
+          let lobbyPopups = document.querySelectorAll(".lobbyPopups");
+          let lobby = document.querySelector("#lobby");
+          let lobbyHead = document.querySelector("#lobbyHead");
+          let irre = document.querySelector("#irresponse");
+          let irrHead = document.querySelector("#irrHead");
+          for (let i = 0; i < statePopups.length; i++) {
+            statePopups[i].addEventListener("click", function () {
+              if (irre.style.display == "" || irre.style.display == "none") {
+                irre.style.display = "block";
+              }
+              switch (i) {
+                case 0:
+                  irrHead.innerHTML = "Comprehensive Policy";
+                  irre.innerHTML =
+                    "A comprehensive policy would place market-based limits and <b>incentives to reduce GHG emissions.</b> Programs include the Regional Greenhouse Gas Initiative in the northeast and cap policies on the west coast.";
+
+                  break;
+                case 1:
+                  irrHead.innerHTML = "Only 12 States";
+                  irre.innerHTML =
+                    "One key state lacking regulations is <b>Texas.</b> This state emits more GHGs than the entire petroleum and natural gas sector!";
+
+                  break;
+                case 2:
+                  irrHead.innerHTML = "Varying Success";
+                  irre.innerHTML =
+                    "Even California, which is hailed as an example of a good cap-and-trade program, has <b>fallen victim to corporate lobbying.</b> This has resulted in inefficient policy.";
+
+                  break;
+              }
+            });
+          }
+
+          for (let i = 0; i < lobbyPopups.length; i++) {
+            lobbyPopups[i].addEventListener("click", function () {
+              if (lobby.style.display == "" || lobby.style.display == "none") {
+                lobby.style.display = "block";
+              }
+              switch (i) {
+                case 0:
+                  lobbyHead.innerHTML = "What is Lobbying?";
+                  lobby.innerHTML =
+                    "To lobby is to promote or secure the passage of legislation by influencing public officials.";
+
+                  break;
+                case 1:
+                  lobbyHead.innerHTML = "Spending on Lobbying";
+                  lobby.innerHTML =
+                    "The 5 largest public oil and gas companies spend <b>$200 million</b> annually on lobbying.";
+
+                  break;
+                case 2:
+                  lobbyHead.innerHTML = "ExxonMobil";
+                  lobby.innerHTML =
+                    "<b>ExxonMobil spent $30 million</b> on anti-climate change thinktanks and research.";
+
+                  break;
+              }
+            });
+          }
+        </script>
+
+        <div class="scroll-center parallax__group z1 txtLight">
+          <section class="content" id="4">
+            <h1>What can I do?</h1>
+            <button id="nxtBut">WHAT'S NEXT</button>
+          </section>
+          <figure class="bg-img parallax__layer parallax__layer--deep">
+            <img
+              class="backbuild"
+              src="images/full_background.png"
+              style="margin-left: 100px;"
+            />
+          </figure>
+          <figure class="bg-img parallax__layer parallax__layer--far">
+            <img
+              class="backbuild"
+              src="images/back_buildings.png"
+              style="margin-left: 200px;"
+            />
+          </figure>
+          <figure class="bg-img parallax__layer parallax__layer--back">
+            <img
+              class="backbuild"
+              src="images/front_building.png"
+              style="margin-right: 50px; margin-bottom: -50px;"
+            />
+          </figure>
+          <script>
+            let bgAll = document.querySelectorAll(".backbuild");
+
+            if (
+              typeof DeviceOrientationEvent.requestPermission === "function"
+            ) {
+              DeviceOrientationEvent.requestPermission()
+                .then((permissionState) => {
+                  if (permissionState === "granted") {
+                    window.ondeviceorientation = function (event) {
+                      var x = event.gamma;
+                      var y = event.alpha;
+
+                      let move = `translate(${x * 0.8}px,${y * 0.8}px)`;
+
+                      for (let bg of bgAll) {
+                        bg.style.transform = move;
+                      }
+
+                      console.log(move);
+                    };
+                  }
+                })
+                .catch(console.error);
+            } else {
+              window.ondeviceorientation = function (event) {
+                var x = event.gamma;
+                var y = event.alpha;
+
+                let move = `translate(${x * 0.8}px,${y * 0.8}px)`;
+
+                for (let bg of bgAll) {
+                  bg.style.transform = move;
+                }
+
+                console.log(move);
+              };
+            }
+          </script>
+        </div>
+
+        <div id="nxtStep" class="scroll-center parallax__group z1 txtDark">
+          <section class="content parallax__group" id="5">
+            <div class="bg-vid parallax__layer parallax__layer--base">
+              <video
+                id="vid"
+                poster="images/green_future.png"
+                src="images/water_receding.mp4"
+                type="video/mp4"
+                playsinline
+                autoplay
+                preload
+                muted
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h2>Next Steps</h2>
+            <div id="socials">
+              <a
+                href="https://nocapteam.github.io/"
+                class="twitter-share-button"
+                data-show-count="false"
+                >Tweet</a
+              >
+
+              <div
+                class="fb-share-button"
+                data-href="https://nocapteam.github.io/"
+                data-layout="button"
+                data-size="small"
+              >
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                  class="fb-xfbml-parse-ignore"
+                  >Share</a
+                >
+              </div>
+            </div>
+
+            <a
+              class="twt"
+              href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Let%27s%20hold%20corporations%20accountable%20in%20the%20climate%20crisis.&tw_p=tweetbutton&url=https://nocapteam.github.io/&original_referer=https://nocapteam.github.io/"
+            >
+              Tweet
+            </a>
+            <a
+              class="fb"
+              href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fnocapteam.github.io%2F&display=popup&ref=plugin&src=share_button"
+            >
+              Share
+            </a>
+            <button id="copy">copy url</button>
+
+            <script>
+              let nextButton = document.querySelector("#nxtBut");
+              let nextStep = document.querySelector("#nxtStep");
+              let copy = document.querySelector("#copy");
+              let vid = document.querySelector("#vid");
+              nextButton.addEventListener("click", function () {
+                nextStep.style.display = "block";
+                vid.play();
+                document
+                  .getElementById("5")
+                  .scrollIntoView({ behavior: "smooth" });
+              });
+
+              copy.addEventListener("click", function () {
+                copy.select();
+                copy.setSelectionRange(0, 99999);
+                document.execCommand("copy", "https://nocapteam.github.io/");
+              });
+            </script>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
